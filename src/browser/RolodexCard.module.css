@@ -4,22 +4,11 @@
   border: var(--border-width) solid var(--color-ink-100);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
-  padding: var(--space-5) var(--space-5) var(--space-4);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
   transition: box-shadow var(--duration-base) var(--ease-default),
               transform var(--duration-base) var(--ease-default);
-  /* Ruled-line texture in the card body area */
-  background-image:
-    linear-gradient(var(--color-paper-100) var(--space-16), transparent var(--space-16)),
-    repeating-linear-gradient(
-      180deg,
-      transparent 0px,
-      transparent 23px,
-      var(--color-ink-100) 23px,
-      var(--color-ink-100) 24px
-    );
 }
 
 .card:hover {
@@ -27,10 +16,51 @@
   transform: translateY(-1px);
 }
 
-/* Planned cards: full opacity — the status label communicates lifecycle, opacity does not.
-   Dimming hurts contrast and implies apology. Show everything honestly. */
+/* ── Preview area ──────────────────────────────────────────────────────────
+   Top section of the card — shows a live component demo when ready,
+   or a clean placeholder when planned.                                     */
 
-/* Top section — sits above the ruled lines */
+.preview {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-paper-50);
+  border-bottom: var(--border-width) solid var(--color-ink-100);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.previewPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.previewIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-ink-200);
+}
+
+.previewLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-400);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ── Card body ─────────────────────────────────────────────────────────── */
+
+.body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -56,15 +86,6 @@
   letter-spacing: var(--tracking-tight);
 }
 
-/* Rule below the header */
-.rule {
-  height: var(--border-width);
-  background-color: var(--color-ink-100);
-  margin: 0 calc(var(--space-5) * -1);
-  /* compensate for card padding so it runs full width */
-}
-
-/* Description sits on the ruled lines */
 .description {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
@@ -73,7 +94,8 @@
   flex: 1;
 }
 
-/* Status */
+/* ── Status ────────────────────────────────────────────────────────────── */
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -83,7 +105,6 @@
   font-weight: var(--weight-regular);
   letter-spacing: 0;
   line-height: 1;
-  margin-top: var(--space-1);
 }
 
 .statusDot {
