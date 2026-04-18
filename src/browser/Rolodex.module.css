@@ -1,0 +1,147 @@
+.shell {
+  min-height: 100vh;
+  background-color: var(--color-paper-50);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-paper-50);
+  border-bottom: var(--border-width) solid var(--color-ink-100);
+  /* Subtle blur so content beneath reads as below-the-fold */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 0 var(--space-8);
+  height: 56px;
+  /* Leave room for the tab strip on the right */
+  padding-right: calc(28px + var(--space-8));
+}
+
+.wordmark {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-ink-900);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.wordmarkDot {
+  color: var(--color-accent-500);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-400);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Main scroll area ────────────────────────────────────────────────────── */
+
+.main {
+  padding: var(--space-8) var(--space-8) var(--space-16);
+  /* Offset right for tab strip */
+  padding-right: calc(28px + var(--space-8));
+}
+
+/* ── Letter section ──────────────────────────────────────────────────────── */
+
+.section {
+  margin-bottom: var(--space-10);
+  /* scroll-margin accounts for sticky header height */
+  scroll-margin-top: calc(56px + var(--space-6));
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.sectionLetter {
+  font-family: var(--font-sans);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink-200);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  flex-shrink: 0;
+  /* Optical alignment: the letter sits slightly low */
+  margin-bottom: -2px;
+}
+
+.sectionRule {
+  flex: 1;
+  height: var(--border-width);
+  background-color: var(--color-ink-100);
+}
+
+/* ── Card grid ───────────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────── */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-24) var(--space-8);
+  text-align: center;
+}
+
+.emptyLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-ink-400);
+}
+
+.emptyQuery {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-ink-700);
+  background-color: var(--color-paper-200);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.clearBtn {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-accent-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-fast) var(--ease-default);
+}
+
+.clearBtn:hover {
+  background-color: var(--color-accent-100);
+}
+
+.clearBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
