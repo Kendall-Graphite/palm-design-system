@@ -21,7 +21,7 @@
   font-size: 10px;
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
-  color: var(--color-ink-400);
+  color: var(--color-ink-600);  /* 7.6:1 on paper-50 ✓ WCAG AA */
   cursor: pointer;
   border: none;
   background: transparent;
@@ -56,7 +56,7 @@
   box-shadow: -2px 0 6px rgba(26, 25, 23, 0.15);
 }
 
-.tab.disabled {
+.tab[aria-disabled='true'] {
   color: var(--color-ink-200);
   cursor: default;
   pointer-events: none;

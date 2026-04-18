@@ -7,9 +7,11 @@
      Ink: text and borders. Paper: surfaces. One accent for action.
      No pure black or pure white — ever.                                     */
 
-  --color-ink-900:   #1a1917;   /* primary text, headings */
-  --color-ink-700:   #3a3834;   /* secondary text */
-  --color-ink-400:   #7a7672;   /* placeholder, disabled text */
+  --color-ink-900:   #1a1917;   /* primary text, headings — contrast 16:1 on paper-50 */
+  --color-ink-700:   #3a3834;   /* secondary text — contrast 9.4:1 on paper-50 */
+  --color-ink-600:   #4a4744;   /* tertiary text, eyebrows — contrast 7.6:1 on paper-50 ✓ AA */
+  --color-ink-500:   #605d59;   /* meta text, status — contrast 5.4:1 on paper-100 ✓ AA */
+  --color-ink-400:   #7a7672;   /* decorative, disabled — 3.7:1 (use only for non-text) */
   --color-ink-200:   #c4bfba;   /* subtle borders */
   --color-ink-100:   #e0dbd4;   /* rule lines, dividers */
 

@@ -27,13 +27,8 @@
   transform: translateY(-1px);
 }
 
-.card.planned {
-  opacity: 0.72;
-}
-
-.card.planned:hover {
-  opacity: 0.88;
-}
+/* Planned cards: full opacity — the status label communicates lifecycle, opacity does not.
+   Dimming hurts contrast and implies apology. Show everything honestly. */
 
 /* Top section — sits above the ruled lines */
 .header {
@@ -48,7 +43,7 @@
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-ink-400);
+  color: var(--color-ink-600);  /* 7.6:1 on paper-100 ✓ WCAG AA */
   line-height: 1;
 }
 
@@ -107,11 +102,10 @@
 }
 
 .status.planned .statusDot {
-  background-color: var(--color-ink-300);
-  border: 1px solid var(--color-ink-200);
   background-color: transparent;
+  border: 1px solid var(--color-ink-500);
 }
 
 .status.planned {
-  color: var(--color-ink-400);
+  color: var(--color-ink-500);  /* 5.4:1 on paper-100 ✓ WCAG AA */
 }

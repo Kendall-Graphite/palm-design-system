@@ -25,8 +25,8 @@ export default function AlphaTabs({ activeLetter, availableLetters, onSelect }: 
             onClick={() => hasComponents && onSelect(letter)}
             aria-label={hasComponents ? `Jump to ${letter}` : `No components for ${letter}`}
             aria-current={isActive ? 'true' : undefined}
+            aria-disabled={!hasComponents}
             tabIndex={hasComponents ? 0 : -1}
-            disabled={!hasComponents}
           >
             {letter}
           </button>
