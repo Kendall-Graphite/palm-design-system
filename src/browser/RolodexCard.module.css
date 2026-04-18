@@ -33,22 +33,16 @@
 
 .previewPlaceholder {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
-}
-
-.previewIcon {
-  width: 32px;
-  height: 32px;
-  color: var(--color-ink-200);
+  justify-content: center;
 }
 
 .previewLabel {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--color-ink-400);
-  letter-spacing: var(--tracking-wide);
+  color: var(--color-ink-300);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
 }
 
 /* ── Card body ─────────────────────────────────────────────────────────── */

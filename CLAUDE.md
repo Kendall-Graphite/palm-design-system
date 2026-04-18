@@ -19,7 +19,7 @@ Details are not a finishing step — they are the work. A misaligned label, an i
 ## Project Goals
 
 1. **React component library** — TypeScript + Vite, production-quality components
-2. **Rolodex browser** — local dev server styled as a physical rolodex card file, components in A–Z alphabetical order
+2. **Rolodex browser** — local dev server with alphabetical A–Z navigation and one card per component
 3. **GitHub hosted** — source on GitHub, deployed to GitHub Pages via GitHub Actions
 4. **Figma linked** — every component mirrored in a Figma library, connected via Figma Code Connect
 5. **Dieter Rams principles** — the design philosophy that governs every decision (see below)
@@ -44,6 +44,14 @@ Every component, token, and UI decision must pass this lens:
 | **10 — As little as possible** | Before adding any variant, ask: is this essential? Prefer composability over proliferating props |
 
 **The ruling principle:** Function makes it beautiful. If it works perfectly, it looks perfect.
+
+### UX vs UI — a critical distinction
+
+The **rolodex is a UX pattern**, not a visual metaphor. It means: one card per component, alphabetical organisation, tab-indexed navigation. That is the *structure*.
+
+The **visual language is derived purely from Rams principles** — not from making the screen look like a physical object. No card-stock textures. No ruled lines. No skeuomorphic depth. No vintage warmth for its own sake. The UI should look like exactly what it is: organised information on a screen, nothing more.
+
+Ask of every visual decision: *does this come from function, or from trying to look like something physical?* If it's the latter, remove it.
 
 ### Detail Obsession Checklist
 
